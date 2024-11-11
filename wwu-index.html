@@ -56,15 +56,15 @@
     <nav class="nav header__nav" aria-label="Header Navigation" data-menu>
       <ul class="list-reset nav__list">
         <li class="nav__item">
-          <a href="#" class="nav__link" data-menu-item>our brands</a>
+          <a href="" class="nav__link" data-menu-item>our brands</a>
           <ul class="list-reset brand-nav__list">
             <li class="brand-nav__item"><a href="https://alfaleads.net/" target="_blank" class="brand-nav__link">Alfaleads Network</a></li>
             <li class="brand-nav__item"><a href="https://alfasearch.net/" target="_blank" class="brand-nav__link">Alfa:search</a></li>
             <li class="brand-nav__item"><a href="https://aaagncy.com/" target="_blank" class="brand-nav__link">AAA Agency</a></li>
           </ul>
         </li>
-        <li class="nav__item"><a href="/wwu-index.html" class="nav__link" data-menu-item>Work With Us</a></li>
-        <li class="nav__item"><a href="#" class="nav__link" data-menu-item>Blog</a></li>
+        <li class="nav__item"><a href="wwu-index.html" class="nav__link" data-menu-item>Work With Us</a></li>
+        <li class="nav__item"><a href="news-index.html" class="nav__link" data-menu-item>Blog</a></li>
         <li class="nav__item"><a href="#" class="nav__link" data-menu-item>Contacts</a></li>
       </ul>
       <div class="socials header__socials">
@@ -111,92 +111,138 @@
   <div class="gallery">
     <div class="gallery__list">
       <picture>
-        <source srcset="/img/gallery-base.webp" type="image/webp" />
-        <img loading="lazy" src="/img/gallery-base.png" class="gallery__image" width="1440" height="800" alt="" />
+        <source srcset="img/gallery-base.webp" type="image/webp" />
+        <img src="img/gallery-base.png" class="gallery__image" width="1440" height="800" alt="" />
       </picture>
-      <div class="gallery__item" style="transform: translateX(0);">
-        <div class="gallery__control">
-          <h3 class="gallery__title">Experts</h3>
+      <div class="gallery__item" style="transform: translateX(0)" data-item-id="1">
+        <div class="gallery__item-wrapper">
           <picture>
-            <source srcset="/img/gallery-1-sm.webp" type="image/webp" />
-            <img src="/img/gallery-1-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+            <source srcset="img/gallery-1-lg.webp" type="image/webp" />
+            <img loading="lazy" src="img/gallery-1-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
           </picture>
+          <div class="gallery__item-content-wrapper">
+            <div class="gallery__control">
+              <h3 class="gallery__title"><span class="gallery__title-arrow"></span>Experts</h3>
+              <picture>
+                <source srcset="img/gallery-1-sm-2x.webp" type="image/webp" media="(min-width: 451px)" />
+                <source srcset="img/gallery-1-sm.webp" type="image/webp" />
+                <source srcset="img/gallery-1-sm-2x.png" media="(min-width: 451px)" />
+                <img loading="lazy" src="img/gallery-1-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+              </picture>
+            </div>
+            <div class="gallery__content text">
+              <p>We have more than 250 of the strongest professionals in our team who work on unique and interesting projects. Each of us is among the most effective and best at what we do. This is the principle by which we assemble our team.</p>
+            </div>
+          </div>
         </div>
-        <div class="gallery__content">
-          <p>We have more than 250 of the strongest professionals in our team who work on unique and interesting projects. Each of us is among the most effective and best at what we do. This is the principle by which we assemble our team.</p>
-        </div>
-        <picture>
-          <source srcset="/img/gallery-1-lg.webp" type="image/webp" />
-          <img loading="lazy" src="/img/gallery-1-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
-        </picture>
       </div>
 
-      <div class="gallery__item" style="transform: translateX(20%);">
-        <div class="gallery__control">
-          <h3 class="gallery__title">Trendsetters</h3>
+      <div class="gallery__item" style="transform: translateX(20%)" data-item-id="2">
+        <div class="gallery__item-wrapper">
           <picture>
-            <source srcset="/img/gallery-2-sm.webp" type="image/webp" />
-            <img src="/img/gallery-2-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+            <source srcset="img/gallery-2-lg.webp" type="image/webp" />
+            <img loading="lazy" src="img/gallery-2-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
           </picture>
+          <div class="gallery__item-content-wrapper">
+            <div class="gallery__control">
+              <h3 class="gallery__title"><span class="gallery__title-arrow"></span>Trendsetters</h3>
+              <picture>
+                <source srcset="img/gallery-2-sm-2x.webp" type="image/webp" media="(min-width: 451px)" />
+                <source srcset="img/gallery-2-sm.webp" type="image/webp" />
+                <source srcset="img/gallery-2-sm-2x.png" media="(min-width: 451px)" />
+                <img src="img/gallery-2-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+              </picture>
+            </div>
+            <div class="gallery__content text">
+              <p>We are constantly coming up with something new, setting trends and changing the market. We are flexible, fast and energetic. If something needs to be done, we just do it. We don't think about whether it's possible or impossible. We like to surprise the market!</p>
+            </div>
+          </div>
         </div>
-        <div class="gallery__content">
-          <p>We are constantly coming up with something new, setting trends and changing the market. We are flexible, fast and energetic. If something needs to be done, we just do it. We don't think about whether it's possible or impossible. We like to surprise the market!</p>
-        </div>
-        <picture>
-          <source srcset="/img/gallery-2-lg.webp" type="image/webp" />
-          <img loading="lazy" src="/img/gallery-2-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
-        </picture>
       </div>
 
-      <div class="gallery__item" style="transform: translateX(40%);">
-        <div class="gallery__control">
-          <h3 class="gallery__title">Achievers</h3>
+      <div class="gallery__item" style="transform: translateX(40%)" data-item-id="3">
+        <div class="gallery__item-wrapper">
           <picture>
-            <source srcset="/img/gallery-3-sm.webp" type="image/webp" />
-            <img src="/img/gallery-3-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+            <source srcset="img/gallery-3-lg.webp" type="image/webp" />
+            <img loading="lazy" src="img/gallery-3-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
           </picture>
+          <div class="gallery__item-content-wrapper">
+            <div class="gallery__control">
+              <h3 class="gallery__title"><span class="gallery__title-arrow"></span>Achievers</h3>
+              <picture>
+                <source srcset="img/gallery-3-sm-2x.webp" type="image/webp" media="(min-width: 451px)" />
+                <source srcset="img/gallery-3-sm.webp" type="image/webp" />
+                <source srcset="img/gallery-3-sm-2x.png" media="(min-width: 451px)" />
+                <img src="img/gallery-3-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+              </picture>
+            </div>
+            <div class="gallery__content text">
+              <p>
+                We are constantly scaling up. We are not satisfied with working the same way as everyone else. We are not satisfied with working at the general market level. We are much more ambitious than that! That is why every year we want to make twice as much profit, double our market share,
+                and to be twice as cool as we were a year ago.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="gallery__content">
-          <p>We are constantly scaling up. We are not satisfied with working the same way as everyone else. We are not satisfied with working at the general market level. We are much more ambitious than that! That is why every year we want to make twice as much profit, double our market share, and to be twice as cool as we were a year ago.</p>
-        </div>
-        <picture>
-          <source srcset="/img/gallery-3-lg.webp" type="image/webp" />
-          <img loading="lazy" src="/img/gallery-3-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
-        </picture>
       </div>
 
-      <div class="gallery__item" style="transform: translateX(60%);">
-        <div class="gallery__control">
-          <h3 class="gallery__title">Project Launchers</h3>
+      <div class="gallery__item" style="transform: translateX(60%)" data-item-id="4">
+        <div class="gallery__item-wrapper">
           <picture>
-            <source srcset="/img/gallery-4-sm.webp" type="image/webp" />
-            <img src="/img/gallery-4-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+            <source srcset="img/gallery-4-lg.webp" type="image/webp" />
+            <img loading="lazy" src="img/gallery-4-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
           </picture>
+          <div class="gallery__item-content-wrapper">
+            <div class="gallery__control">
+              <h3 class="gallery__title"><span class="gallery__title-arrow"></span>Project Launchers</h3>
+              <picture>
+                <source srcset="img/gallery-4-sm-2x.webp" type="image/webp" media="(min-width: 451px)" />
+                <source srcset="img/gallery-4-sm.webp" type="image/webp" />
+                <source srcset="img/gallery-4-sm-2x.png" media="(min-width: 451px)" />
+                <img src="img/gallery-4-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+              </picture>
+            </div>
+            <div class="gallery__content text">
+              <p>We are constantly exploring new directions, and launching new startups and projects. We are growing fast and looking far into the future. We have very ambitious goals — we want to change the world and be among the Top-100 companies globally.</p>
+            </div>
+          </div>
         </div>
-        <div class="gallery__content">
-          <p>We are constantly exploring new directions, and launching new startups and projects. We are growing fast and looking far into the future. We have very ambitious goals — we want to change the world and be among the Top-100 companies globally.</p>
-        </div>
-        <picture>
-          <source srcset="/img/gallery-4-lg.webp" type="image/webp" />
-          <img loading="lazy" src="/img/gallery-4-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
-        </picture>
       </div>
 
-      <div class="gallery__item" style="transform: translateX(80%);">
-        <div class="gallery__control">
-          <h3 class="gallery__title">Socially Responsible</h3>
+      <div class="gallery__item" style="transform: translateX(80%)" data-item-id="5">
+        <div class="gallery__item-wrapper">
           <picture>
-            <source srcset="/img/gallery-5-sm.webp" type="image/webp" />
-            <img src="/img/gallery-5-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+            <source srcset="img/gallery-5-lg.webp" type="image/webp" />
+            <img loading="lazy" src="img/gallery-5-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
           </picture>
+          <div class="gallery__item-content-wrapper">
+            <div class="gallery__control">
+              <h3 class="gallery__title"><span class="gallery__title-arrow"></span>Socially Responsible</h3>
+              <picture>
+                <source srcset="img/gallery-5-sm-2x.webp" type="image/webp" media="(min-width: 451px)" />
+                <source srcset="img/gallery-5-sm.webp" type="image/webp" />
+                <source srcset="img/gallery-5-sm-2x.png" media="(min-width: 451px)" />
+                <img src="img/gallery-5-sm.png" class="gallery__control-image" width="567" height="100" alt="" />
+              </picture>
+            </div>
+            <div class="gallery__content text">
+              <p>We are always ready to help those who need it. We donate a portion of our funds to orphanages and nursing homes. We have opened our own animal shelter. We hold charity auctions, dinners and other events. We organize cleanup days, plant trees and clear areas of garbage.</p>
+            </div>
+          </div>
         </div>
-        <div class="gallery__content">
-          <p>We are always ready to help those who need it. We donate a portion of our funds to orphanages and nursing homes. We have opened our own animal shelter. We hold charity auctions, dinners and other events. We organize cleanup days, plant trees and clear areas of garbage.</p>
-        </div>
-        <picture>
-          <source srcset="/img/gallery-5-lg.webp" type="image/webp" />
-          <img loading="lazy" src="/img/gallery-5-lg.png" class="gallery__content-image" width="1440" height="800" alt="" />
-        </picture>
+      </div>
+    </div>
+
+    <div class="gallery__nav gallery-nav">
+      <div class="gallery-nav__left">
+        <!-- <svg class="gallery-nav__svg">
+          <use xlink:href="img/sprite.svg#nav-arrow-left"></use>
+        </svg> -->
+      </div>
+      <div class="gallery-nav__right">
+        <!-- <svg class="gallery-nav__svg">
+          <use xlink:href="img/sprite.svg#nav-arrow-right"></use>
+        </svg> -->
       </div>
     </div>
   </div>
@@ -648,7 +694,7 @@
     <footer class="footer">
   <div class="container footer__container">
     <div class="footer__logo-wrapper">
-      <a href="/" class="logo footer__logo">
+      <a href="" class="logo footer__logo">
         <!-- <img src="img/logo.svg" alt="Alfaleads Group logo" class="logo__image" /> -->
         <svg width="105" height="50" viewBox="0 0 105 50" class="logo__image" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M72.1731 50H32.8271C32.3295 50 31.9977 49.4631 32.2299 49.0101L36.128 41.3423C36.2442 41.1074 36.4764 40.9731 36.7252 40.9731H68.275C68.5238 40.9731 68.756 41.1242 68.8721 41.3423L72.7702 49.0101C73.0024 49.4631 72.6873 50 72.1731 50Z" fill="#8B00FF" />
@@ -680,8 +726,8 @@
     <nav class="footer__nav footer-nav" aria-label="Footer menu">
       <ul class="list-reset footer-nav__list">
         <li class="footer-nav__item"><a href="#" class="footer-nav__link">our brands</a></li>
-        <li class="footer-nav__item"><a href="/wwu-index.html" class="footer-nav__link">work with us</a></li>
-        <li class="footer-nav__item"><a href="#" class="footer-nav__link">blog</a></li>
+        <li class="footer-nav__item"><a href="wwu-index.html" class="footer-nav__link">work with us</a></li>
+        <li class="footer-nav__item"><a href="news-index.html" class="footer-nav__link">blog</a></li>
         <li class="footer-nav__item"><a href="#" class="footer-nav__link">contacts</a></li>
       </ul>
     </nav>

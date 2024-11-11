@@ -20,6 +20,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import "./components/gallery.js";
+// import "./components/gallery-2.js";
 
 
 /***/ }),
@@ -198,47 +200,119 @@ document.addEventListener("DOMContentLoaded", () => {
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-document.addEventListener("DOMContentLoaded", () => {
-  const accordions = document.querySelectorAll(".gallery__item");
-  accordions.forEach(el => {
-    el.addEventListener("click", e => {
-      const self = e.currentTarget;
-      // const control = self.querySelector(".gallery__control");
-      // const content = self.querySelector(".gallery__content");
-
-      // if (e.target.closest(".gallery__control") === control) {
-      accordions.forEach(elem => {
+let gallerySetup = () => {
+  let gallery = document.querySelector(".gallery");
+  if (window.innerWidth > 768 && gallery) {
+    let galleryItems = document.querySelectorAll(".gallery__item");
+    let navigator = document.querySelector(".gallery-nav");
+    let navL = navigator.querySelector(".gallery-nav__left");
+    let navR = navigator.querySelector(".gallery-nav__right");
+    let title = document.querySelector(".gallery__title");
+    let timer;
+    if (title) {
+      timer = window.getComputedStyle(document.querySelector(".gallery__title")).getPropertyValue("animation-duration").replace(/[^\d.-]/g, "") * 1000;
+    }
+    if (!timer) {
+      timer = 0;
+    }
+    navigator.dataset.currentItemId = 0;
+    gallery.style = `--items: ${galleryItems.length}`;
+    for (let i = 0; i < galleryItems.length; i++) {
+      galleryItems[i].dataset.itemId = i + 1;
+      galleryItems[i].style = `--i: ${i}`;
+    }
+    let onGalleryItemClick = galleryItem => {
+      galleryItem.classList.add("gallery__item--open");
+      navigator.classList.add("gallery__nav--active");
+    };
+    let closeAllGalleryItems = () => {
+      document.querySelectorAll(".gallery__item").forEach(elem => {
         elem.classList.remove("gallery__item--open");
       });
-      self.classList.toggle("gallery__item--open");
-      // }
+    };
+    let openGalleryItem = id => {
+      closeAllGalleryItems();
+      document.querySelector(`.gallery__item[data-item-id='${id}']`).classList.add("gallery__item--open");
+      pauseGalleryInteraction(timer / 2);
+    };
+    let pauseGalleryInteraction = time => {
+      document.removeEventListener("click", galleryInteraction);
+      setTimeout(() => {
+        document.addEventListener("click", galleryInteraction);
+      }, time);
+    };
+    let changeNavigation = () => {
+      if (+navigator.dataset.currentItemId > 1) {
+        navL.setAttribute("aria-disabled", "false");
+      } else {
+        navL.setAttribute("aria-disabled", "true");
+      }
+      if (+navigator.dataset.currentItemId < galleryItems.length) {
+        navR.setAttribute("aria-disabled", "false");
+      } else {
+        navR.setAttribute("aria-disabled", "true");
+      }
+    };
+    document.addEventListener("click", galleryInteraction);
+    function galleryInteraction(event) {
+      let galleryItem = event.target.closest(".gallery__item");
+      let openedGalleryItem = event.target.closest(".gallery__item--open");
+      let galleryItemTitle = event.target.closest(".gallery__title");
+      let navigatorLeft = event.target.closest(".gallery-nav__left");
+      let navigatorRight = event.target.closest(".gallery-nav__right");
+      if (galleryItem && !openedGalleryItem) {
+        closeAllGalleryItems();
+        onGalleryItemClick(galleryItem);
+        navigator.dataset.currentItemId = +galleryItem.dataset.itemId;
+        changeNavigation();
+        pauseGalleryInteraction(timer);
+      }
+      if (openedGalleryItem && galleryItemTitle) {
+        navigator.dataset.currentItemId = 0;
+        closeAllGalleryItems();
+        navigator.classList.remove("gallery__nav--active");
+        pauseGalleryInteraction(timer);
+      }
+      if (navigatorLeft && +navigator.dataset.currentItemId === 1 || navigatorRight && +navigator.dataset.currentItemId === galleryItems.length || +navigator.dataset.currentItemId < 1 || +navigator.dataset.currentItemId > galleryItems.length) {
+        return;
+      }
+      if (navigatorLeft) {
+        navigator.dataset.currentItemId--;
+        changeNavigation();
+        openGalleryItem(navigator.dataset.currentItemId);
+      }
+      if (navigatorRight) {
+        navigator.dataset.currentItemId++;
+        changeNavigation();
+        openGalleryItem(navigator.dataset.currentItemId);
+      }
+    }
+  } else {
+    let accordions = document.querySelectorAll(".gallery__item");
+    accordions.forEach(el => {
+      el.addEventListener("click", e => {
+        let self = e.currentTarget;
+        let control = self.querySelector(".gallery__control");
+        let content = self.querySelector(".gallery__content");
+        if (e.target.closest(".gallery__control") === control) {
+          self.classList.toggle("gallery__item--open");
+        }
 
-      // если открыт аккордеон
-      // if (self.classList.contains("gallery__item--open")) {
-      // control.setAttribute("aria-expanded", true);
-      // content.setAttribute("aria-hidden", false);
-      // content.style.maxHeight = content.scrollHeight + "px";
-      // control.querySelector(".accordion__option").innerText =
-      //   document.querySelector(".accordion__option-less").innerText;
-      // } else {
-      // control.setAttribute("aria-expanded", false);
-      // content.setAttribute("aria-hidden", true);
-      // content.style.maxHeight = null;
-      // control.querySelector(".accordion__option").innerText =
-      //   document.querySelector(".accordion__option-more").innerText;
-      // }
+        // если открыт аккордеон
+        if (self.classList.contains("gallery__item--open")) {
+          control.setAttribute("aria-expanded", true);
+          content.setAttribute("aria-hidden", false);
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          control.setAttribute("aria-expanded", false);
+          content.setAttribute("aria-hidden", true);
+          content.style.maxHeight = null;
+        }
+      });
     });
-  });
-
-  // window.addEventListener("resize", (event) => {
-  //   const openedAcoordions = document.querySelectorAll(".gallery__item--open");
-
-  //   openedAcoordions.forEach((el) => {
-  //     const content = el.querySelector(".gallery__content");
-  //     content.style.maxHeight = content.scrollHeight + "px";
-  //   });
-  // });
-});
+  }
+};
+document.addEventListener("DOMContentLoaded", gallerySetup);
 
 /***/ }),
 
